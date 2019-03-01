@@ -46,10 +46,13 @@ let quotes = [
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+
 function getRandomQuote() {
-  let randomIndex = Math.floor(Math.random * quotes.length);
+  let randomIndex = Math.floor(Math.random() * quotes.length);
   return quotes[randomIndex];
 }
+
+console.log('random quote', getRandomQuote());
 
 /***
   Create the `printQuote` function to: 

@@ -18,7 +18,8 @@ project 1 - A Random Quote Generator
 let quotes = [
   {
     quote: 'Humans are allergic to change.They love to say, ‘We’ve always done it this way.’ I try to fight that.That’s why I have a clock on my wall that runs counterclockwise.',
-    source: 'Grace Hopper'
+    source: 'Grace Hopper',
+    citation: 'Code Like a Girl'
   },
   {
     quote: 'They never asked me to go back over (my calculations) because when I did it, I had done my best, and it was right.',
@@ -26,7 +27,8 @@ let quotes = [
   },
   {
     quote: 'When I first started using the phrase software engineering, it was considered to be quite amusing. They used to kid me about my radical ideas. Software eventually and necessarily gained the same respect as any other discipline.',
-    source: 'Margaret Hamilton'
+    source: 'Margaret Hamilton',
+    year: 2014
   },
   {
     quote: 'Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.',
@@ -62,7 +64,22 @@ function getRandomQuote() {
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+function printQuote() {
+  let html = '';
+  let quoteBox;
+  let quote = getRandomQuote();
 
+  html += `<p class="quote">${quote.quote}</p>
+    <p class="source">${quote.source}`
+  if(quote.citation) {
+    html += `<span class="citation">${quote.citation}</span>`
+  } else if(quote.year) {
+    `<span class="year">${quote.year}</span>`
+  }
+  html += `</p>`;
+  quoteBox = document.getElementById('quote-box');
+  quoteBox.innerHTML(html);
+}
 
 /***
   When the "Show another quote" button is clicked, the event listener 

@@ -38,17 +38,16 @@ let quotes = [
   }
 ];
 
-
-
-
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number 
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
-
-
+function getRandomQuote() {
+  let randomIndex = Math.floor(Math.random * quotes.length);
+  return quotes[randomIndex];
+}
 
 /***
   Create the `printQuote` function to: 
@@ -62,7 +61,6 @@ let quotes = [
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-
 
 
 

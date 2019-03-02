@@ -17,26 +17,31 @@ project 1 - A Random Quote Generator
 
 let quotes = [
   {
-    quote: 'Humans are allergic to change.They love to say, ‘We’ve always done it this way.’ I try to fight that.That’s why I have a clock on my wall that runs counterclockwise.',
+    quote: 'Humans are allergic to change. They love to say, ‘We’ve always done it this way.’ I try to fight that. That’s why I have a clock on my wall that runs counterclockwise.',
     source: 'Grace Hopper',
-    citation: 'Code Like a Girl'
+    citation: 'Code Like a Girl',
+    tags: ['science', 'humor']
   },
   {
     quote: 'They never asked me to go back over (my calculations) because when I did it, I had done my best, and it was right.',
-    source: 'Katherine Coleman Goble Johnson'
+    source: 'Katherine Coleman Goble Johnson',
+    tags: ['science', 'NASA']
   },
   {
     quote: 'When I first started using the phrase software engineering, it was considered to be quite amusing. They used to kid me about my radical ideas. Software eventually and necessarily gained the same respect as any other discipline.',
     source: 'Margaret Hamilton',
-    year: 2014
+    year: 2014,
+    tags: ['science', 'engineering', 'software']
   },
   {
     quote: 'Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.',
-    source: 'Marie Curie'
+    source: 'Marie Curie',
+    tags: ['science', 'fear']
   },
   {
     quote: 'The quality, relevance, and impact of the products and services output by the technology sector can only be improved by having the people who are building them be demographically representative of the people who are using them.',
-    source: 'Tracy Chou'
+    source: 'Tracy Chou',
+    tags: ['technology', 'business']
   }
 ];
 
@@ -78,6 +83,15 @@ function printQuote() {
     html += `<span class="citation">${quote.citation}</span>`
   } else if(quote.year) {
     `<span class="year">${quote.year}</span>`
+  } else if(quote.tags) {
+    html += `<p class="tags">Tags: `
+    for(let i = 0; i < quote.tags.length; i++) {
+      html += `${quote.tags[i]}`
+      if(i !== (quote.tags.length - 1)) {
+        html += ', ';
+      }
+    }
+    html += `</p>`
   }
   html += `</p>`;
   quoteBox = document.getElementById('quote-box');

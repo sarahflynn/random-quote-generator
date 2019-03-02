@@ -81,7 +81,7 @@ function printQuote() {
   }
   html += `</p>`;
   quoteBox = document.getElementById('quote-box');
-  quoteBox.innerHTML(html);
+  quoteBox.innerHTML = html;
 }
 
 /***

@@ -95,10 +95,10 @@ body {
 
 @media (min-width: 420px) {
   .quote {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .quote:before, .quote:after {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .source {
     font-size: 1.25rem;

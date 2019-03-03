@@ -3,7 +3,6 @@ A Random Quote Generator
 ******************************************/
 
 // Quotes array
-
 let quotes = [
   {
     quote: 'Humans are allergic to change. They love to say, ‘We’ve always done it this way.’ I try to fight that. That’s why I have a clock on my wall that runs counterclockwise.',
@@ -35,7 +34,6 @@ let quotes = [
 ];
 
 // Random quote generator function
-
 function getRandomQuote() {
   let randomIndex = Math.floor(Math.random() * quotes.length);
   return quotes[randomIndex];
@@ -52,7 +50,6 @@ function randomRgbCode() {
 }
 
 // Print quote funciton calls getRandomQuote function, conditionally adds quote values to an html string, and changes the inner HTML of the quote-box div
-
 function printQuote() {
   let html = '';
   let quoteBox;
@@ -88,11 +85,9 @@ function printQuote() {
 }
 
 // Calls printQuote() to update page every 2 seconds
-
 setInterval(function() {
   printQuote();
 }, 2000);
 
 // Calls printQuote() in response to button click event
-
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);

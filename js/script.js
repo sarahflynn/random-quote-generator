@@ -72,8 +72,12 @@ console.log('random quote', getRandomQuote());
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
-function randomColorCode() {
+function randomColorValue() {
+  return Math.floor(Math.random() * 256);
+}
 
+function randomRgbCode() {
+  return `rgb(${randomColorValue()}, ${randomColorValue()}, ${randomColorValue()})`;
 }
 
 function printQuote() {
@@ -105,6 +109,7 @@ function printQuote() {
 
   html += `</p>`;
 
+  document.body.style.backgroundColor = randomRgbCode();
   quoteBox = document.getElementById('quote-box');
   quoteBox.innerHTML = html;
 }

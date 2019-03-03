@@ -41,7 +41,7 @@ let quotes = [
   {
     quote: 'The quality, relevance, and impact of the products and services output by the technology sector can only be improved by having the people who are building them be demographically representative of the people who are using them.',
     source: 'Tracy Chou',
-    tags: ['technology', 'business']
+    tags: ['technology', 'business'],
   }
 ];
 
@@ -72,18 +72,27 @@ console.log('random quote', getRandomQuote());
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+function randomColorCode() {
+
+}
+
 function printQuote() {
   let html = '';
   let quoteBox;
   let quote = getRandomQuote();
 
   html += `<p class="quote">${quote.quote}</p>
-    <p class="source">${quote.source}`
+    <p class="source">${quote.source}`;
+
   if(quote.citation) {
     html += `<span class="citation">${quote.citation}</span>`
-  } else if(quote.year) {
-    `<span class="year">${quote.year}</span>`
-  } else if(quote.tags) {
+  } 
+  
+  if(quote.year) {
+    html += `<span class="year">${quote.year}</span>`
+  }
+  
+  if(quote.tags) {
     html += `<p class="tags">Tags: `
     for(let i = 0; i < quote.tags.length; i++) {
       html += `${quote.tags[i]}`
@@ -93,7 +102,9 @@ function printQuote() {
     }
     html += `</p>`
   }
+
   html += `</p>`;
+
   quoteBox = document.getElementById('quote-box');
   quoteBox.innerHTML = html;
 }
